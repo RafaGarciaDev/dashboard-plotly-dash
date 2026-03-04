@@ -1,0 +1,342 @@
+/* ==================== RESET E ESTILOS GLOBAIS ==================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f8f9fa;
+    color: #333333;
+}
+
+/* ==================== SCROLLBAR ==================== */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* ==================== COMPONENTES DASH ==================== */
+
+.dash-table-container {
+    max-width: 100%;
+}
+
+/* Input e Select */
+input, select, textarea {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #0066cc;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+/* DatePickerRange */
+.react-datepicker-wrapper input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.react-datepicker {
+    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.react-datepicker__header {
+    background-color: #0066cc;
+    border-radius: 4px;
+}
+
+.react-datepicker__day--selected {
+    background-color: #0066cc;
+    color: white;
+}
+
+.react-datepicker__day--in-range {
+    background-color: rgba(0, 102, 204, 0.2);
+}
+
+/* Dropdown (Select) */
+.Select {
+    border-radius: 4px;
+}
+
+.Select-control {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.Select-control:hover {
+    border-color: #0066cc;
+}
+
+.Select-menu-outer {
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.Select-option {
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.Select-option:hover {
+    background-color: rgba(0, 102, 204, 0.1);
+}
+
+.Select-option.is-selected {
+    background-color: #0066cc;
+    color: white;
+}
+
+/* ==================== GRÁFICOS ==========*/
+
+.plotly {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif !important;
+}
+
+.plotly .plotly-graph-div {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* ==================== ANIMAÇÕES ==========*/
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.kpi-card {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.dashboard-header {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.loading {
+    animation: pulse 1.5s infinite;
+}
+
+/* ==================== RESPONSIVO ==================== */
+
+@media (max-width: 1200px) {
+    .dashboard-container {
+        padding: 15px;
+    }
+    
+    .kpi-row {
+        gap: 10px;
+    }
+    
+    .graph-container {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Header */
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+    
+    /* Filtros */
+    .filters-container {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    
+    .filter-item {
+        width: 100%;
+    }
+    
+    /* KPI Cards */
+    .kpi-row {
+        flex-direction: column !important;
+        gap: 15px;
+    }
+    
+    .kpi-card {
+        width: 100%;
+        margin-right: 0 !important;
+    }
+    
+    /* Gráficos */
+    .graph-row {
+        flex-direction: column !important;
+        gap: 15px;
+    }
+    
+    .graph-container {
+        flex: 1 !important;
+        margin-right: 0 !important;
+        width: 100%;
+    }
+    
+    /* Padding */
+    .dashboard-content {
+        padding: 0 15px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 13px;
+    }
+    
+    h1 {
+        font-size: 24px !important;
+    }
+    
+    h3, h4, h5, h6 {
+        font-size: 14px !important;
+    }
+    
+    .dashboard-header {
+        padding: 15px !important;
+    }
+    
+    .filters-container {
+        padding: 15px !important;
+    }
+    
+    .kpi-card h3 {
+        font-size: 20px !important;
+    }
+    
+    input, select, textarea {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
+
+/* ==================== UTILITÁRIOS ==================== */
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-muted {
+    color: #999;
+}
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: 8px; }
+.mt-2 { margin-top: 16px; }
+.mt-3 { margin-top: 24px; }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: 8px; }
+.mb-2 { margin-bottom: 16px; }
+.mb-3 { margin-bottom: 24px; }
+
+.p-0 { padding: 0; }
+.p-1 { padding: 8px; }
+.p-2 { padding: 16px; }
+.p-3 { padding: 24px; }
+
+.rounded {
+    border-radius: 4px;
+}
+
+.rounded-lg {
+    border-radius: 8px;
+}
+
+.shadow {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-lg {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* ==================== DARK MODE (OPCIONAL) ==================== */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+    
+    input, select, textarea {
+        background-color: #2a2a2a;
+        border-color: #444;
+        color: #e0e0e0;
+    }
+    
+    .react-datepicker {
+        background-color: #2a2a2a;
+        border-color: #444;
+    }
+    
+    .react-datepicker__day {
+        color: #e0e0e0;
+    }
+    
+    .react-datepicker__header {
+        background-color: #0066cc;
+    }
+}
