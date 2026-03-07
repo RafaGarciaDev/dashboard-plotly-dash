@@ -110,11 +110,7 @@ Contribuições são bem-vindas! Por favor:
 
 Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
-## 👤 Autor
 
-Seu Nome
-- GitHub: [@seu-usuario](https://github.com/seu-usuario)
-- LinkedIn: [Seu Perfil](https://linkedin.com/in/seu-perfil)
 
 ## 📞 Suporte
 
